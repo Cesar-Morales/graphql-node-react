@@ -1,10 +1,10 @@
 module.exports = {
     Query: {
         pets(_, {input}, {models}) {
-            return models.Pet.findAll(input || {});
+            return models.Pet.findAll(input);
         },
         pet(_, {id}, {models}) {
-            return models.Pet.findOne(id);
+            return models.Pet.findOne({id});
         },
         user(_, __, {models}) {
             return models.User.findOne();
@@ -23,7 +23,7 @@ module.exports = {
     },
     Pet: {
         owner(pet, _, {models}) {
-            return models.User.findOne({ id: pet.user });
+            return models.User.findOne({ id: pet.owner });
         },
         img(pet) {
             return pet.type === 'DOG'
