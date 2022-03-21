@@ -1,0 +1,13 @@
+{
+    "user": {
+        "id": "string",
+        "name": "string",
+        "email": "string"
+    },
+    "pet": {
+        "id": "string",
+        "createdAt": "string",
+        "name": "string",
+        "type": "string"
+    }
+}
